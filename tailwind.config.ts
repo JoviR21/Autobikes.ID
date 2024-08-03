@@ -8,13 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: "#2B2E33",
+        secondary: "#34373E",
+        third: "#F05454",
+        text: "#FFF",
+      },
+      fontFamily: {
+        quicksand: ["Quicksand", "sans-serif"],
+        cousine: ["Cousine", "monospace"],
+        montserrat: ["Montserrat", "sans-serif"],
+        overpass: ["Overpass", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 };
 export default config;
