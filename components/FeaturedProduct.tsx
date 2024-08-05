@@ -1,8 +1,16 @@
+import styled from "styled-components";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import Image from "next/image"
 
 export default function FeaturedProduct() {
+
+    const BtnProduct = styled.button`
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: translateX(5px);
+        }
+    `
 
     return (
         <section className="featured-product w-full h-full py-10">
@@ -10,7 +18,7 @@ export default function FeaturedProduct() {
                 <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Top-Rates</span> Motorcycles</h1>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-3 gap-5 place-items-center">
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -33,11 +41,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -60,11 +68,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -87,11 +95,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -114,11 +122,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -141,11 +149,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -168,11 +176,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -195,11 +203,11 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-72 sm:w-80 shadow-xl">
+                <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                     <figure>
                         <Image
                             src="/Featured-Product.png"
@@ -222,7 +230,7 @@ export default function FeaturedProduct() {
                             </ul>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
                         </div>
                     </div>
                 </div>

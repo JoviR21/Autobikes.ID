@@ -9,14 +9,14 @@ export default function Category() {
     const ButtonCtg = styled.button`
         transition: all 0.3s;
         &:hover {
-            transform: translateX(-5px);
+            transform: translateX(8px);
         }
     `
 
     return (
         <section>
             <div className="category w-full h-full py-10">
-                <div className="head flex content-center mx-3 md:mx-0">
+                <div className="head flex content-center items-center mx-3 md:mx-0">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'>Explore By <span className='text-third'>Models</span></h1>
                     <a href="#" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">Explore all<BsArrowUpRightCircle className="ms-2" /></a>
                 </div>

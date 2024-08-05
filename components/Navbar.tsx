@@ -1,5 +1,3 @@
-import { Quicksand, Cousine } from "next/font/google";
-
 import { PiMotorcycleFill } from "react-icons/pi";
 import { MdSportsMotorsports } from "react-icons/md";
 import { AiFillTool } from "react-icons/ai";
@@ -10,7 +8,7 @@ import { HiBuildingOffice } from "react-icons/hi2";
 export default function Navbar() {
 
     return (
-        <header>
+        <header className="z-40 relative">
             <nav className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">

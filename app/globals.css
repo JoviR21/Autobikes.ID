@@ -14,4 +14,5 @@
 body {
   color: #fff;
   background: #2B2E33;
+  scroll-behavior: smooth;
 }
