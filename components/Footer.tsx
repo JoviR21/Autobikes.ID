@@ -1,7 +1,7 @@
 export default function Footer() {
 
     return (
-        <footer>
+        <footer className="content-center">
             <div className="footer bg-base-200 text-base-content p-10">
                 <nav>
                     <h6 className="footer-title text-third">Motorcycles</h6>
@@ -34,12 +34,12 @@ export default function Footer() {
                     <a className="link link-hover">About us</a>
                 </nav>
                 <nav>
-                    <h1 className="footer-title text-3xl max-w-64 text-left md:text-right">find your <span className="text-third">dream motorcycle</span> here!</h1>
+                    <h3 className="footer-title text-3xl max-w-64 text-left md:text-right md:ms-auto">find your <span className="text-third">dream motorcycle</span> here!</h3>
                 </nav>
             </div>
             <div className="border-b-2 w-full"></div>
             <div className="footer bg-base-200 text-base-content p-10">
-                <nav className="flex ms-auto">
+                <nav className="flex">
                     <h6 className="footer-title font-quicksand font-semibold">All Right Reserved - <span>&copy;</span> 2024 Autobikes.ID</h6>
                 </nav>
             </div>

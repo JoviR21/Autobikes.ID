@@ -306,7 +306,7 @@ export default function Home() {
             {/* Services */}
 
             {/* Featured Product */}
-            <section className="featured-product w-full h-full py-10">
+            <article className="featured-product w-full h-full py-10">
                 <div className="head flex content-center mx-3 md:mx-0 mb-2">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Top-Rates</span> Motorcycles</h1>
                 </div>
@@ -528,11 +528,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </article>
             {/* Featured Product */}
 
             {/* Featured Article */}
-            <section className="featured-articles w-full h-full py-10">
+            <article className="featured-articles w-full h-full py-10">
                 <div className="head flex content-center mx-3 md:mx-0 mb-2">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Featured</span> Articles</h1>
                 </div>
@@ -589,11 +589,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </article>
             {/* Featured Article */}
 
             {/* Featured Apparels */}
-            <div className="featured-apparels w-full h-full py-10 bg-secondary">
+            <section className="featured-apparels w-full h-full py-10 bg-secondary">
                 <div className="head flex content-center items-center mx-3 md:mx-0 mb-2">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'>Apparels <span className='text-third'>Shop</span></h1>
                     <a href="#" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">All apparels<BsArrowUpRightCircle className="ms-2" /></a>
@@ -694,7 +694,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             {/* Featured Apparels */}
         </main>
     )
