@@ -6,13 +6,8 @@ import styled from "styled-components";
 
 export default function Services() {
 
-    const ServiceSection = styled.section`
-        background-color: #34373E;
-        color: #fff;
-    `
-
     return (
-            <ServiceSection className="service w-full h-full py-10">
+            <section className="service w-full h-full py-10 bg-secondary">
                 <div className="head flex content-center mx-3 md:mx-0">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Why</span> Choose Us?</h1>
                 </div>
@@ -42,6 +37,6 @@ export default function Services() {
                         </div>
                     </div>
                 </div>
-            </ServiceSection>
+            </section>
     )
 }

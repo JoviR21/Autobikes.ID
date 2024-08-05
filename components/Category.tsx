@@ -9,7 +9,8 @@ export default function Category() {
     const ButtonCtg = styled.button`
         transition: all 0.3s;
         &:hover {
-            transform: translateX(8px);
+            transform: translateX(5px);
+            color: #F05454;
         }
     `
 

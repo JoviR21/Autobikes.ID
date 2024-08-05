@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function FeaturedApparels() {
 
     return (
-        <div className="featured-apparels w-full h-full py-10">
+        <div className="featured-apparels w-full h-full py-10 bg-secondary">
             <div className="head flex content-center items-center mx-3 md:mx-0 mb-2">
                 <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'>Apparels <span className='text-third'>Shop</span></h1>
                 <a href="#" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">All apparels<BsArrowUpRightCircle className="ms-2" /></a>
@@ -24,15 +24,15 @@ export default function FeaturedApparels() {
                     </figure>
                     <div className="card-body">
                         <div className="card-title flex">
-                            <h2 className="text-start font-cousine">LS-2 Valiant</h2>
+                            <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
                             <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
                         </div>
-                        <div className="mb-5 font-montserrat font-medium">
+                        <div className="mb-auto font-montserrat font-medium">
                             <p>KPA, a proprietary polymer alloy,
                             Approximately 1620 grams</p>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
                         </div>
                     </div>
                 </div>
@@ -48,14 +48,14 @@ export default function FeaturedApparels() {
                     </figure>
                     <div className="card-body">
                         <div className="card-title flex">
-                            <h2 className="text-start font-cousine">Shark</h2>
+                            <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">Shark</h2>
                             <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
                         </div>
-                        <div className="mb-5 font-montserrat font-medium">
+                        <div className="mb-auto font-montserrat font-medium">
                             <p>Injected thermoplastic resin, Approximately 1650 grams</p>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
                         </div>
                     </div>
                 </div>
@@ -71,15 +71,15 @@ export default function FeaturedApparels() {
                     </figure>
                     <div className="card-body">
                         <div className="card-title flex">
-                            <h2 className="text-start font-cousine">LS-2 Valiant</h2>
+                            <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
                             <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
                         </div>
-                        <div className="mb-5 font-montserrat font-medium">
+                        <div className="mb-auto font-montserrat font-medium">
                             <p>KPA, a proprietary polymer alloy,
                             Approximately 1620 grams</p>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
                         </div>
                     </div>
                 </div>
@@ -95,14 +95,14 @@ export default function FeaturedApparels() {
                     </figure>
                     <div className="card-body">
                         <div className="card-title flex">
-                            <h2 className="text-start font-cousine">LS-2 Valiant</h2>
+                            <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
                             <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
                         </div>
-                        <div className="mb-5 font-montserrat font-medium">
+                        <div className="mb-auto font-montserrat font-medium">
                             <p>Injected thermoplastic resin, Approximately 1650 grams</p>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></button>
+                            <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
                         </div>
                     </div>
                 </div>
