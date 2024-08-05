@@ -11,6 +11,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import styled from 'styled-components';
 import Image from 'next/image';
 
+import BtnProduct from "@/components/BtnProduct";
+
 export default function Home() {
     // Carousel
     const ButtonSlider = styled.button`
@@ -25,13 +27,6 @@ export default function Home() {
         &:hover {
             transform: translateX(5px);
             color: #F05454;
-        }
-    `
-    // Featured Product
-    const BtnProduct = styled.button`
-        transition: all 0.3s ease-in-out;
-        &:hover {
-            transform: translateX(5px);
         }
     `
 
@@ -334,7 +329,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -361,7 +356,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -388,7 +383,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -415,7 +410,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -442,7 +437,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -469,7 +464,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -496,7 +491,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>
@@ -523,7 +518,7 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="card-actions justify-start">
-                                <BtnProduct className="btn btn-sm btn-outline font-overpass font-medium">See Details <FaArrowRightLong /></BtnProduct>
+                                <BtnProduct />
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <header className="z-40 relative">
-            <nav className="navbar bg-base-100">
+            <nav className="navbar bg-transparent">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
