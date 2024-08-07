@@ -17,7 +17,7 @@ export default function Motorcycles() {
     return (
         <main>
             {/* Hero */}
-            <section className="hero bg-base-200 h-72 bg-primary">
+            <section className="hero h-72 bg-primary">
                 <div className="hero-content text-center me-0 md:text-start md:me-auto md:mx-14">
                     <div className="max-w-lg font-cousine">
                         <h1 className="text-4xl md:text-5xl font-bold">Motorcycles</h1>
@@ -57,7 +57,7 @@ export default function Motorcycles() {
             {/* Filter */}
 
             {/* Product */}
-            <section className="product w-full h-full py-10">
+            <article className="product w-full h-full py-10">
                 <div className="head flex content-center mx-3 md:mx-0 mb-2">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>All Models</span> Motorcycles</h1>
                 </div>
@@ -495,7 +495,7 @@ export default function Motorcycles() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </article>
             {/* Product */}
         </main>
     )

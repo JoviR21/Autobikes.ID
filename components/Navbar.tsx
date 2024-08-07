@@ -32,7 +32,7 @@ export default function Navbar() {
                             <li><a><PiMotorcycleFill />Motorcycles</a></li>
                             <li><a><MdSportsMotorsports />Apparels</a></li>
                             <li><a><AiFillTool />Services</a></li>
-                            <li><a><IoSpeedometer />Test Drives</a></li>
+                            <li><a><IoSpeedometer />Test Ride</a></li>
                             <li><a><RiArticleFill />Articles</a></li>
                             <li><a><HiBuildingOffice />About</a></li>
                         </ul>
@@ -44,7 +44,7 @@ export default function Navbar() {
                         <li><a>Motorcycles</a></li>
                         <li><a>Apparels</a></li>
                         <li><a>Services</a></li>
-                        <li><a>Test Drives</a></li>
+                        <li><a>Test Ride</a></li>
                         <li><a>Articles</a></li>
                         <li><a>About</a></li>
                     </ul>

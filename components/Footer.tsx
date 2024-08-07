@@ -29,7 +29,7 @@ export default function Footer() {
                 </nav>
                 <nav>
                     <h6 className="footer-title text-third">Other's</h6>
-                    <a className="link link-hover">Test drives</a>
+                    <a className="link link-hover">Test ride</a>
                     <a className="link link-hover">Articles</a>
                     <a className="link link-hover">About us</a>
                 </nav>
