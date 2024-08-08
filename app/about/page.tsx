@@ -112,12 +112,6 @@ export default function About() {
                 <iframe width="1440" height="400" className="w-full" id="gmap_canvas" src="https://maps.google.com/maps?width=1440&amp;height=440&amp;hl=en&amp;q=Jl.%20Laksamana%20R.%20E%20%20Jakarta+(Autobikes.ID)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </section>
             {/* Location */}
-
-            {/* Our Team */}
-            <section className="team w-full h-full py-10 bg-secondary">
-                
-            </section>
-            {/* Our Team */}
         </main>
     )
 }

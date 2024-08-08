@@ -12,7 +12,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import BtnProduct from "@/components/BtnProduct";
-import BtnAtc from "@/components/BtnAtc";
 
 export default function Home() {
     // Carousel
@@ -27,15 +26,6 @@ export default function Home() {
         transition: all 0.3s;
         &:hover {
             transform: translateX(5px);
-            color: #F05454;
-        }
-    `
-
-    // Featured Articles
-    const HeadAtc = styled.h2`
-        cursor: pointer;
-        transition:  all 0.3s;
-        &:hover {
             color: #F05454;
         }
     `
@@ -516,171 +506,42 @@ export default function Home() {
             </article>
             {/* Featured Product */}
 
-            {/* Featured Article */}
-            <article className="featured-articles w-full h-full py-10">
+            {/* Testimonials */}
+            <section className="testimonials w-full h-full py-10 bg-primary">
                 <div className="head flex content-center mx-3 md:mx-0 mb-2">
-                    <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Featured</span> Articles</h1>
+                    <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>What</span> people say about us...</h1>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-3 gap-5 place-items-center">
-                    <div className="card image-full w-72 md:w-96 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Featured-Articles.png"
-                                width={360}
-                                height={280}
-                                alt="Featured Articles"
-                                className="w-full h-full"
-                                loading="lazy" />
-                        </figure>
-                        <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
-                            <div className="card-actions justify-start">
-                                <BtnAtc />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card image-full w-72 md:w-96 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Featured-Articles.png"
-                                width={360}
-                                height={280}
-                                alt="Featured Articles"
-                                className="w-full h-full"
-                                loading="lazy" />
-                        </figure>
-                        <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
-                            <div className="card-actions justify-start">
-                                <BtnAtc />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card image-full w-72 md:w-96 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Featured-Articles.png"
-                                width={360}
-                                height={280}
-                                alt="Featured Articles"
-                                className="w-full h-full"
-                                loading="lazy" />
-                        </figure>
-                        <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
-                            <div className="card-actions justify-start">
-                                <BtnAtc />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            {/* Featured Article */}
-
-            {/* Featured Apparels */}
-            <section className="featured-apparels w-full h-full py-10 bg-secondary">
-                <div className="head flex content-center items-center mx-3 md:mx-0 mb-2">
-                    <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'>Apparels <span className='text-third'>Shop</span></h1>
-                    <a href="#" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">All apparels<BsArrowUpRightCircle className="ms-2" /></a>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-3 gap-5 place-items-center">
-                    <div className="card h-full bg-base-100 w-72 sm:w-80 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Helmet1.png"
-                                width={270}
-                                height={170}
-                                alt="LS-2 Valiant"
-                                className='w-full h-full'
-                                loading='lazy' />
-                        </figure>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-7">
+                    <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
-                            <div className="card-title flex">
-                                <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
-                                <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
+                            <div className="profile mx-auto">
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">John Doe</h2>
                             </div>
-                            <div className="mb-auto font-montserrat font-medium">
-                                <p>KPA, a proprietary polymer alloy,
-                                    Approximately 1620 grams</p>
-                            </div>
-                            <div className="card-actions justify-start">
-                                <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
-                            </div>
+                            <p className="text-justify mt-auto font-montserrat font-medium">"Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle."</p>
                         </div>
                     </div>
-                    <div className="card h-full bg-base-100 w-72 sm:w-80 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Helmet2.png"
-                                width={270}
-                                height={170}
-                                alt="Shark"
-                                className='w-full h-full'
-                                loading='lazy' />
-                        </figure>
+                    <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
-                            <div className="card-title flex">
-                                <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">Shark</h2>
-                                <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
+                            <div className="profile mx-auto">
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Jane Doe</h2>
                             </div>
-                            <div className="mb-auto font-montserrat font-medium">
-                                <p>Injected thermoplastic resin, Approximately 1650 grams</p>
-                            </div>
-                            <div className="card-actions justify-start">
-                                <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
-                            </div>
+                            <p className="text-justify mt-auto font-montserrat font-medium">"I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here."</p>
                         </div>
                     </div>
-                    <div className="card h-full bg-base-100 w-72 sm:w-80 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Helmet1.png"
-                                width={270}
-                                height={170}
-                                alt="LS-2 Valiant"
-                                className='w-full h-full'
-                                loading='lazy' />
-                        </figure>
+                    <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
-                            <div className="card-title flex">
-                                <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
-                                <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
+                            <div className="profile mx-auto">
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Joko Doe</h2>
                             </div>
-                            <div className="mb-auto font-montserrat font-medium">
-                                <p>KPA, a proprietary polymer alloy,
-                                    Approximately 1620 grams</p>
-                            </div>
-                            <div className="card-actions justify-start">
-                                <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card h-full bg-base-100 w-72 sm:w-80 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Helmet2.png"
-                                width={270}
-                                height={170}
-                                alt="LS-2 Valiant"
-                                className='w-full h-full'
-                                loading='lazy' />
-                        </figure>
-                        <div className="card-body">
-                            <div className="card-title flex">
-                                <h2 className="text-start font-cousine hover:text-third transition delay-100 cursor-pointer">LS-2 Valiant</h2>
-                                <h2 className="ms-auto badge badge-outline text-accent font-cousine">Helmet</h2>
-                            </div>
-                            <div className="mb-auto font-montserrat font-medium">
-                                <p>Injected thermoplastic resin, Approximately 1650 grams</p>
-                            </div>
-                            <div className="card-actions justify-start">
-                                <button className="btn btn-sm btn-outline font-overpass font-medium hover:translate-x-2 transition-all delay-150">See Details <FaArrowRightLong /></button>
-                            </div>
+                            <p className="text-justify mt-auto font-montserrat font-medium">"My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous."</p>
                         </div>
                     </div>
                 </div>
             </section>
-            {/* Featured Apparels */}
+            {/* Testimonials */}
         </main>
     )
 }

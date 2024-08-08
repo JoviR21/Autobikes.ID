@@ -13,13 +13,6 @@ export default function Footer() {
                     <a className="link link-hover">Naked</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-third">Apparels</h6>
-                    <a className="link link-hover">Helmets</a>
-                    <a className="link link-hover">Gloves</a>
-                    <a className="link link-hover">Jackets</a>
-                    <a className="link link-hover">Shoes</a>
-                </nav>
-                <nav>
                     <h6 className="footer-title text-third">Services</h6>
                     <a className="link link-hover">Trusted</a>
                     <a className="link link-hover">Complete paper</a>
@@ -28,10 +21,17 @@ export default function Footer() {
                     <a className="link link-hover">Testimonials</a>
                 </nav>
                 <nav>
+                    <h6 className="footer-title text-third">About</h6>
+                    <a className="link link-hover">History</a>
+                    <a className="link link-hover">Company Culture</a>
+                    <a className="link link-hover">FAQ</a>
+                    <a className="link link-hover">Locations</a>
+                    <a className="link link-hover">Contact us</a>
+                </nav>
+                <nav>
                     <h6 className="footer-title text-third">Other's</h6>
                     <a className="link link-hover">Test ride</a>
                     <a className="link link-hover">Articles</a>
-                    <a className="link link-hover">About us</a>
                 </nav>
                 <nav>
                     <h3 className="footer-title text-3xl max-w-64 text-left md:text-right md:ms-auto">find your <span className="text-third">dream motorcycle</span> here!</h3>
