@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import BtnProduct from "@/components/BtnProduct";
+import BtnAtc from "@/components/BtnAtc";
 
 export default function Home() {
     // Carousel
@@ -38,17 +39,6 @@ export default function Home() {
             color: #F05454;
         }
     `
-    const ButtonAtc = styled.button`
-        transition: all 0.3s;
-        &:hover {
-            transform: translateX(8px);
-            color: #F05454;
-        }
-    `
-
-    // Featured Apparels
-
-
 
     return (
         <main>
@@ -532,7 +522,7 @@ export default function Home() {
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Featured</span> Articles</h1>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-3 gap-5 place-items-center">
-                    <div className="card image-full bg-transparent w-72 md:w-96 shadow-xl">
+                    <div className="card image-full w-72 md:w-96 shadow-xl">
                         <figure>
                             <Image
                                 src="/Featured-Articles.png"
@@ -545,7 +535,7 @@ export default function Home() {
                         <div className="card-body mt-auto">
                             <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
                             <div className="card-actions justify-start">
-                                <ButtonAtc className="text-5xl"><CiCircleChevRight /></ButtonAtc>
+                                <BtnAtc />
                             </div>
                         </div>
                     </div>
@@ -562,7 +552,7 @@ export default function Home() {
                         <div className="card-body mt-auto">
                             <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
                             <div className="card-actions justify-start">
-                                <ButtonAtc className="text-5xl"><CiCircleChevRight /></ButtonAtc>
+                                <BtnAtc />
                             </div>
                         </div>
                     </div>
@@ -579,7 +569,7 @@ export default function Home() {
                         <div className="card-body mt-auto">
                             <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
                             <div className="card-actions justify-start">
-                                <ButtonAtc className="text-5xl"><CiCircleChevRight /></ButtonAtc>
+                                <BtnAtc />
                             </div>
                         </div>
                     </div>

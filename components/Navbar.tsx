@@ -5,6 +5,8 @@ import { IoSpeedometer } from "react-icons/io5";
 import { RiArticleFill } from "react-icons/ri";
 import { HiBuildingOffice } from "react-icons/hi2";
 
+import Link from "next/link";
+
 export default function Navbar() {
 
     return (
@@ -28,25 +30,25 @@ export default function Navbar() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-64 p-2 shadow gap-y-4 font-medium font-cousine">
-                            <li><a><PiMotorcycleFill />Motorcycles</a></li>
-                            <li><a><MdSportsMotorsports />Apparels</a></li>
-                            <li><a><AiFillTool />Services</a></li>
-                            <li><a><IoSpeedometer />Test Ride</a></li>
-                            <li><a><RiArticleFill />Articles</a></li>
-                            <li><a><HiBuildingOffice />About</a></li>
+                            className="menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-96 p-2 shadow gap-y-4 font-medium font-cousine items-center">
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3 pt-3" href="/motorcycles"><PiMotorcycleFill className="me-3" />Motorcycles</Link>
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3" href="/apparels"><MdSportsMotorsports className="me-3" />Apparels</Link>
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3" href="/services"><AiFillTool className="me-3" />Services</Link>
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3" href="/ride"><IoSpeedometer className="me-3"/>Test Ride</Link>
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3" href="/articles"><RiArticleFill className="me-3" />Articles</Link>
+                            <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear flex mb-4 ps-3" href="/about"><HiBuildingOffice className="me-3" />About</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl font-bold font-quicksand">Autobikes.ID</a>
+                    <Link href="/" className="btn btn-ghost text-xl font-bold font-quicksand">Autobikes.ID</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu-horizontal px-1 gap-6 font-medium font-cousine">
-                        <li><a>Motorcycles</a></li>
-                        <li><a>Apparels</a></li>
-                        <li><a>Services</a></li>
-                        <li><a>Test Ride</a></li>
-                        <li><a>Articles</a></li>
-                        <li><a>About</a></li>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/motorcycles">Motorcycles</Link>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/apparels">Apparels</Link>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/services">Services</Link>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/ride">Test Ride</Link>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/articles">Articles</Link>
+                        <Link className="hover:border-b-4 hover:border-third hover:text-third transition-all ease-linear" href="/about">About</Link>
                     </ul>
                 </div>
                 <div className="navbar-end">

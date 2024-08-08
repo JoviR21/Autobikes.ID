@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Autobikes.ID - Find Your Dream Bikes | Homepages",
-  description: "Dealer Bikes",
+  description: "Dealer and Importir Motorcycles",
 };
 
 export default function RootLayout({

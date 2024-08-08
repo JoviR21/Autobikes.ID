@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Autobikes.ID - Find Your Dream Bikes | Motorcycles",
-  description: "Page for see detail about motorcycles",
+  title: "Autobikes.ID - Find Your Dream Bikes | Articles",
+  description: "Page for our article about motorcycles",
 };
 
 export default function MotorcycleLayout({

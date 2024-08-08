@@ -1,8 +1,5 @@
 "use client"
 
-import styled from "styled-components"
-import Image from "next/image"
-
 export default function TestRide() {
 
     return (
@@ -22,36 +19,33 @@ export default function TestRide() {
 
             {/* Form */}
             <section className="foot w-full h-full py-10 bg-secondary">
-                <div className="grid grid-cols-3 mx-10 justify-center gap-7">
-                    <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                            <span className="label-text text-xl text-white font-cousine font-semibold">First Name</span>
-                        </div>
-                        <input type="text" placeholder="Enter first name" className="input input-bordered w-full max-w-xs border-2 border-third hover:border-white transition-all " />
+                <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-5 px-16">
+                    <label className="first-name form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">First Name</span>
+                        <input type="text" placeholder="Type your first name" className="input input-bordered w-full border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out" required />
                     </label>
-                    <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                            <span className="label-text text-xl text-white font-cousine font-semibold">Last Name</span>
-                        </div>
-                        <input type="text" placeholder="Enter last name" className="input input-bordered w-full max-w-xs border-2 border-third hover:border-white transition-all " />
+                    <label className="last-name form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">Last Name</span>
+                        <input type="text" placeholder="Type your last name" className="input input-bordered w-full border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out" required />
                     </label>
-                    <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                            <span className="label-text text-xl text-white font-cousine font-semibold">Phone</span>
-                        </div>
-                        <input type="text" placeholder="Enter number phone" className="input input-bordered w-full max-w-xs border-2 border-third hover:border-white transition-all " />
+                    <label className="email form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">Email</span>
+                        <input type="email" placeholder="Type your email" className="input input-bordered w-full border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required />
                     </label>
-                    <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                            <span className="label-text text-xl text-white font-cousine font-semibold">Email</span>
-                        </div>
-                        <input type="text" placeholder="Enter email" className="input input-bordered w-full max-w-xs border-2 border-third hover:border-white transition-all " />
+                    <label className="phone form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">No. Phone</span>
+                        <input type="number" placeholder="Type your phone number" className="input input-bordered w-full border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                     </label>
-                    <label className="form-control w-full max-w-xs">
-                        <div className="label">
-                            <span className="label-text text-xl text-white font-cousine font-semibold">Model & Type</span>
-                        </div>
-                        <input type="text" placeholder="Model & type bikes you want test" className="input input-bordered w-full max-w-xs border-2 border-third hover:border-white transition-all " />
+                    <label className="City form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">City</span>
+                        <textarea placeholder="Type your city" className="input input-bordered w-full h-20 border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out placeholder:pt-2" />
+                    </label>
+                    <label className="message form-control w-full">
+                        <span className="label-text text-xl text-white mb-2 ms-5 font-cousine font-semibold placeholder:font-montserrat">Message</span>
+                        <textarea placeholder="Type message (optional)" className="input input-bordered w-full h-20 border-0 rounded-sm border-b-4 border-third hover:border-white transition-all ease-in-out placeholder:pt-2" />
+                    </label>
+                    <label className="submit form-control md:w-fit w-full">
+                        <input type="submit" className="btn btn-xl border-2 border-third rounded px-20 py-0 hover:translate-x-1 transition-all delay-100 ease-in" placeholder="Send Request" />
                     </label>
                 </div>
             </section>
