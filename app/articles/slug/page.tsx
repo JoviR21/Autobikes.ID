@@ -13,11 +13,6 @@ export default function ArticlesSlug() {
                         </p>
                         <div className="border-b-4 border-third w-40 mx-auto"></div>
                         <h1 className="text-xl md:text-3xl font-bold mt-5">Supermoto vs Trail Bikes: A comparative Guides</h1>
-                        <div className="mt-5">    
-                            <div className="text-base badge border-2 border-third p-4 m-5">Motorcycle</div>
-                            <div className="text-base badge border-2 border-third p-4 m-5">Trails</div>
-                            <div className="text-base badge border-2 border-third p-4 m-5">Supermoto</div>
-                        </div>
                     </div>
                 </div>
             </section>
