@@ -1,29 +1,37 @@
 "use client"
 
-import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { createClient } from "contentful";
 import Image from "next/image";
+import Link from "next/link";
 
 import BtnProduct from "@/components/BtnProduct";
 import BtnAtc from "@/components/BtnAtc";
 
 export default function Motorcycles() {
 
-    // Category
-    const CategoryFilter = styled.li`
-        &:hover {
-            text-decoration: underline;
-            color: #F05454;
-        }
-    `
+    const [collection, setCollection] = useState([])
 
-    // Featured Articles
-    const HeadAtc = styled.h2`
-        cursor: pointer;
-        transition:  all 0.3s;
-        &:hover {
-            color: #F05454;
+    useEffect(() => {
+        async function getData() {
+            try {
+                const client = createClient({
+                    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
+                    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+                });
+                const response = await client.getEntries({
+                    content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT || "",
+                });
+
+                setCollection(response.items)
+
+            } catch (error) {
+                console.log(error)
+            }
         }
-    `
+
+        getData()
+    }, [])
 
     return (
         <main>
@@ -43,26 +51,26 @@ export default function Motorcycles() {
             {/* Filter */}
             <section className="filter w-full h-full py-2 md:py-7 bg-secondary">
                 <ul className="text-center md:flex gap-14 justify-center font-overpass font-bold hidden">
-                    <CategoryFilter><a href="#">All</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Adventure</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Custom</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Trails</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Sport</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Touring</a></CategoryFilter>
-                    <CategoryFilter><a href="#">Naked</a></CategoryFilter>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">All</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Adventure</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Custom</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Trails</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Sport</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Touring</a></li>
+                    <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Naked</a></li>
                 </ul>
                 <div className="collapse md:hidden collapse-arrow">
                     <input type="checkbox" />
                     <div className="collapse-title text-2xl sm:text-3xl font-cousine font-medium">Category: </div>
-                    <div className="collapse-content list-none font-overpass text-xl sm:text-2xl">
-                        <CategoryFilter className="mb-3"><a href="#">All</a></CategoryFilter>
-                        <CategoryFilter className="mb-3"><a href="#">Adventure</a></CategoryFilter>
-                        <CategoryFilter className="mb-3"><a href="#">Custom</a></CategoryFilter>
-                        <CategoryFilter className="mb-3"><a href="#">Trails</a></CategoryFilter>
-                        <CategoryFilter className="mb-3"><a href="#">Sport</a></CategoryFilter>
-                        <CategoryFilter className="mb-3"><a href="#">Touring</a></CategoryFilter>
-                        <CategoryFilter><a href="#">Naked</a></CategoryFilter>
-                    </div>
+                    <ul className="collapse-content list-none font-overpass text-xl sm:text-2xl">
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">All</a></li>
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Adventure</a></li>
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Custom</a></li>
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Trails</a></li>
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Sport</a></li>
+                        <li className="mb-3 hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Touring</a></li>
+                        <li className="hover:text-third hover:underline hover:underline-offset-2 transition-all ease-in"><a href="#">Naked</a></li>
+                    </ul>
                 </div>
             </section>
             {/* Filter */}
@@ -73,34 +81,48 @@ export default function Motorcycles() {
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>All Models</span> Motorcycles</h1>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-3 gap-5 place-items-center">
-                    <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Other-Products.png"
-                                width={270}
-                                height={170}
-                                alt="Featured Product"
-                                className='w-full h-full'
-                                loading='lazy' />
-                        </figure>
-                        <div className="card-body">
-                            <div className="card-title flex">
-                                <h2 className="text-start font-cousine">Yamaha FZ09</h2>
-                                <h2 className="ms-auto badge badge-outline text-third font-cousine">Naked</h2>
-                            </div>
-                            <div className="mb-5 font-montserrat font-medium"><p>Short Spec: </p>
-                                <ul>
-                                    <li>Engine: in-line four</li>
-                                    <li>Power/Torque: 93.9HP / 63.0NM</li>
-                                    <li>Year: 2021</li>
-                                </ul>
-                            </div>
-                            <div className="card-actions justify-start">
-                                <BtnProduct />
+                    {collection.map(item => {
+                        const thumbnail = item.fields.thumbnail as {
+                            fields: {
+                                file: {
+                                    url: string;
+                                    details: { image: { width: number; height: number } };
+                                };
+                            };
+                        };
+
+                        return <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl" key={item.sys.id}>
+                            <figure>
+                                <Image
+                                    src="/Other-Products.png"
+                                    width={270}
+                                    height={170}
+                                    alt="Featured Product"
+                                    className='w-full h-full'
+                                    loading='lazy' />
+                            </figure>
+                            <div className="card-body">
+                                <div className="card-title flex">
+                                    <h2 className="text-start font-cousine">Yamaha FZ09</h2>
+                                    <h2 className="ms-auto badge badge-outline text-third font-cousine">Naked</h2>
+                                </div>
+                                <div className="mb-5 font-montserrat font-medium"><p>Short Spec: </p>
+                                    <ul>
+                                        <li>Engine: in-line four</li>
+                                        <li>Power/Torque: 93.9HP / 63.0NM</li>
+                                        <li>Year: 2021</li>
+                                    </ul>
+                                </div>
+                                <div className="card-actions justify-start">
+                                    <BtnProduct />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
+                    })}
+
+
+
+                    {/* <div className="card bg-base-100 w-72 sm:w-80 h-100 shadow-xl">
                         <figure>
                             <Image
                                 src="/Other-Products.png"
@@ -504,7 +526,7 @@ export default function Motorcycles() {
                                 <BtnProduct />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </article>
             {/* Product */}
@@ -526,41 +548,7 @@ export default function Motorcycles() {
                                 loading="lazy" />
                         </figure>
                         <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
-                            <div className="card-actions justify-start">
-                                <BtnAtc />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card image-full w-72 md:w-96 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Featured-Articles.png"
-                                width={360}
-                                height={280}
-                                alt="Featured Articles"
-                                className="w-full h-full"
-                                loading="lazy" />
-                        </figure>
-                        <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
-                            <div className="card-actions justify-start">
-                                <BtnAtc />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card image-full w-72 md:w-96 shadow-xl">
-                        <figure>
-                            <Image
-                                src="/Featured-Articles.png"
-                                width={360}
-                                height={280}
-                                alt="Featured Articles"
-                                className="w-full h-full"
-                                loading="lazy" />
-                        </figure>
-                        <div className="card-body mt-auto">
-                            <HeadAtc className="card-title font-cousine font-bold">Supermoto vs Trail Bikes: A Comparative Guide.</HeadAtc>
+                            <p className="card-title font-cousine font-bold hover:text-third hover:translate-x-2 transition-all ease-in-out">Supermoto vs Trail Bikes: A Comparative Guide.</p>
                             <div className="card-actions justify-start">
                                 <BtnAtc />
                             </div>
