@@ -165,14 +165,14 @@ export default function Services() {
                     <div className="head">
                         <h2 className="text-3xl md:text-6xl max-w-none md:max-w-64 font-cousine font-semibold">Chat us, to ask about <span className="text-third">Services</span></h2>
                     </div>
-                    <div className="chat grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <form className="chat grid grid-cols-1 md:grid-cols-2 gap-5">
                         <input type="text" placeholder="Full Name" className="bg-secondary border-0 rounded-none border-b-4 border-third input w-full max-w-xs placeholder:font-cousine placeholder:font-bold" />
                         <input type="text" placeholder="Bike Type" className="bg-secondary border-0 rounded-none border-b-4 border-third input w-full max-w-xs placeholder:font-cousine placeholder:font-bold" />
                         <input type="text" placeholder="Address" className="bg-secondary border-0 rounded-none border-b-4 border-third input w-full max-w-xs placeholder:font-cousine placeholder:font-bold" />
                         <input type="text" placeholder="Service Type" className="bg-secondary border-0 rounded-none border-b-4 border-third input w-full max-w-xs placeholder:font-cousine placeholder:font-bold" />
                         <textarea placeholder="Message" className="bg-secondary border-0 rounded-none border-b-4 border-third input w-full h-14 max-w-xs placeholder:font-cousine placeholder:font-bold" />
                         <button className="btn btn-sm btn-ghost border-2 border-third w-fit mt-6">Send Message</button>
-                    </div>
+                    </form>
                 </div>
             </section>
             {/* Chat us */}

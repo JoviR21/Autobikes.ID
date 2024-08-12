@@ -1,6 +1,59 @@
+import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import Image from "next/image";
 
-export default function MotorcycleSlug() {
+async function getCollection(slug: string) {
+    try {
+        const client = createClient({
+            space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
+            accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+        });
+        const response = await client.getEntries({
+            content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT!,
+            "fields.slug": slug,
+        });
+
+        return response.items[0].fields;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function generateMetadata({
+    params,
+}: {
+    params: { slug: string };
+}) {
+    const collection = await getCollection(params.slug);
+
+    return {
+        title: collection?.nameProduct,
+        description: `${collection?.shortDesc}`,
+    };
+}
+
+export default async function CollectionsSlug({
+    params,
+}: {
+    params: { slug: string };
+}) {
+    const collection = await getCollection(params.slug);
+    const featuredImage = collection?.featuredImage as ContentfulImage;
+    const desc = collection?.desc as Text;
+    const specEngine = collection?.specEngine as Text;
+    const specChassisAndSuspension = collection?.specChassisAndSuspension as Text;
+    const specDimensionAndWeight = collection?.specDimensionAndWeight as Text;
+    const specCapacity = collection?.specCapacity as Text;
+    const specElectrical = collection?.specElectrical as Text;
+
+    const option = {
+        renderNode: {
+            [BLOCKS.PARAGRAPH]: (_: unknown, children: React.ReactNode) => {
+                return <p className="mb-6">{children}</p>;
+            },
+        }
+    }
 
     return (
         <main className="bg-secondary">
@@ -8,10 +61,10 @@ export default function MotorcycleSlug() {
             <section className="banner carousel w-full h-40 lg:h-96 px-5 lg:px-36 mt-10 border-none">
                 <div id="item1" className="carousel-item w-full relative">
                     <Image
-                        src="/Details-Product.png"
+                        src={`https:${featuredImage.fields.file.url}`}
                         width={1200}
                         height={470}
-                        alt="Supermoto vs Trail Bikes: A comparative Guides"
+                        alt="Product"
                         className="w-full h-full object-cover rounded-lg"
                         loading="lazy"
                     />
@@ -21,10 +74,10 @@ export default function MotorcycleSlug() {
 
             {/* Desc */}
             <div className="paragraph w-full h-full pt-10 px-5 bg-secondary">
-            <div className="hero-content text-justify me-0 md:me-auto mx-auto">
+                <div className="hero-content text-justify me-0 md:me-auto mx-auto">
                     <div className="font-montserrat font-medium">
                         <p className="text-base mb-8">
-                        The Honda CBR650R is a middleweight sportbike designed to provide a balanced riding experience. With its 649cc inline-four engine, it delivers a smooth power delivery and responsive acceleration, making it suitable for both everyday commuting and spirited rides.
+                            {desc}
                         </p>
                     </div>
                 </div>
@@ -37,65 +90,46 @@ export default function MotorcycleSlug() {
                     <div tabIndex={0} className="collapse max-w-7xl mx-auto mb-3">
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Engine</div>
                         <div className="collapse-content pt-3 font-montserrat">
-                            <ol className="list-disc">
-                                <li>Type: 649cc liquid-cooled inline four-cylinder four-stroke</li>
-                                <li>Bore and Stroke: 67.0mm x 46.0mm</li>
-                                <li>Compression Ratio: 11.6:1</li>
-                                <li>Induction: PGM-FI with 32mm throttle bodies</li>
-                                <li>Transmission: 6-speed</li>
-                                <li>Maximum Power: Approximately 85-90 hp (depending on year and emission regulations)</li>
-                                <li>Maximum Torque: Approximately 60-65 Nm</li>
-                            </ol>
+                            <div className="list-disc">
+                                {documentToReactComponents(specEngine, option)}
+                            </div>
                         </div>
                     </div>
                     <div tabIndex={0} className="collapse max-w-7xl mx-auto mb-3">
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Chassis & Suspension</div>
                         <div className="collapse-content pt-3 font-montserrat">
-                            <ol className="list-disc">
-                                <li>Frame: Diamond type, steel</li>
-                                <li>Front Suspension: Telescopic fork, spring preload and damping adjustable</li>
-                                <li>Rear Suspension: Pro-link with monoshock, spring preload adjustable</li>
-                                <li>Front Brake: Dual disc, ABS</li>
-                                <li>Rear Brake: Single disc, ABS</li>
-                                <li>Front Tire: Radial, size varies depending on model and year</li>
-                                <li>Rear Tire: Radial, size varies depending on model and year</li>
-                            </ol>
+                        <div className="list-disc">
+                                {documentToReactComponents(specChassisAndSuspension, option)}
+                            </div>
                         </div>
                     </div>
                     <div tabIndex={0} className="collapse max-w-7xl mx-auto mb-3">
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Dimension & Weight</div>
                         <div className="collapse-content pt-3 font-montserrat">
-                            <ol className="list-disc">
-                                <li>Length: Approximately 2080 mm</li>
-                                <li>Width: Approximately 780 mm</li>
-                                <li>Height: Approximately 1150 mm</li>
-                                <li>Wheelbase: Approximately 1410 mm</li>
-                                <li>Seat Height: Approximately 810 mm</li>
-                                <li>Kerb Weight: Approximately 200 kg</li>
-                            </ol>
+                        <div className="list-disc">
+                                {documentToReactComponents(specDimensionAndWeight, option)}
+                            </div>
                         </div>
                     </div>
                     <div tabIndex={0} className="collapse max-w-7xl mx-auto mb-3">
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Capacity</div>
                         <div className="collapse-content pt-3 font-montserrat">
-                            <ol className="list-disc">
-                                <li>Fuel Tank: Approximately 15 liters</li>
-                            </ol>
+                            <div className="list-disc">
+                                {documentToReactComponents(specCapacity, option)}
+                            </div>
                         </div>
                     </div>
                     <div tabIndex={0} className="collapse max-w-7xl mx-auto mb-3">
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Electrical</div>
                         <div className="collapse-content pt-3 font-montserrat">
-                            <ol className="list-disc">
-                                <li>Instrument Panel: Digital LCD, displays speed, rpm, fuel, trip meter, and more.</li>
-                                <li>Lighting: Full LED.</li>
-                                <li>Additional Features: Some models may come with features like Honda Selectable Torque Control (HSTC), assist/slipper clutch, and TFT instrument panel.</li>
-                            </ol>
+                            <div className="list-disc">
+                                {documentToReactComponents(specElectrical, option)}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             {/* Spec */}
         </main>
-    )
+    );
 }

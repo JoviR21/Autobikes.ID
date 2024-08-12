@@ -74,10 +74,10 @@ export default function Articles() {
                             </figure>
                             <div className="card-body mt-auto">
                                 <Link href={`/articles/${item.fields.slug}`}>
-                                <p className="card-title font-cousine font-bold hover:text-third hover:translate-x-2 transition-all ease-in-out">{item.fields.nameProduct}</p>
-                                <div className="card-actions justify-start">
-                                    <BtnAtc />
-                                </div>
+                                    <p className="card-title font-cousine font-bold hover:text-third hover:translate-x-2 transition-all ease-in-out">{item.fields.nameProduct}</p>
+                                    <div className="card-actions justify-start">
+                                        <BtnAtc />
+                                    </div>
                                 </Link>
                             </div>
                         </div>

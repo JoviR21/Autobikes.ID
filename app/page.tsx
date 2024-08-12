@@ -1,5 +1,8 @@
 "use client"
 
+import { useState, useEffect } from "react";
+import { createClient } from "contentful";
+
 import { CiCircleChevRight } from "react-icons/ci";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import { MdOutlineVerifiedUser } from "react-icons/md";
@@ -8,6 +11,7 @@ import { FaHandshake } from "react-icons/fa";
 import { Ri24HoursFill } from "react-icons/ri";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+import Link from "next/link";
 import styled from 'styled-components';
 import Image from 'next/image';
 
@@ -29,6 +33,29 @@ export default function Home() {
             color: #F05454;
         }
     `
+
+    const [collection, setCollection] = useState([])
+
+    useEffect(() => {
+        async function getData() {
+            try {
+                const client = createClient({
+                    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
+                    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+                });
+                const response = await client.getEntries({
+                    content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT || "",
+                });
+
+                setCollection(response.items)
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        getData()
+    }, [])
 
     return (
         <main>
@@ -130,7 +157,7 @@ export default function Home() {
                 <section className="category w-full h-full py-10">
                     <div className="head flex content-center items-center mx-3 md:mx-0">
                         <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'>Explore By <span className='text-third'>Models</span></h1>
-                        <a href="#" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">Explore all<BsArrowUpRightCircle className="ms-2" /></a>
+                        <Link href="/motorcycles" className="text-sm md:text-base md:text-end font-cousine font-bold ms-auto md:me-5 flex">Explore all<BsArrowUpRightCircle className="ms-2" /></Link>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 py-3 gap-5 place-items-center">
                         <div className="card image-full w-40 sm:w-52 shadow-xl">
@@ -281,7 +308,52 @@ export default function Home() {
             {/* Services */}
 
             {/* Featured Product */}
-            <article className="featured-product w-full h-full py-10">
+            {/* Product */}
+            <article className="product w-full h-full py-10">
+                <div className="head flex content-center mx-3 md:mx-0 mb-2">
+                    <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>All Models</span> Motorcycles</h1>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-3 gap-5 place-items-center">
+                    {collection.map(item => {
+                        const thumbnail = item.fields.thumbnail as {
+                            fields: {
+                                file: {
+                                    url: string;
+                                    details: { image: { width: number; height: number } };
+                                };
+                            };
+                        };
+
+                        return <div className="card bg-base-100 w-72 sm:w-80 h-full shadow-xl" key={item.sys.id}>
+                            <figure>
+                                <Image
+                                    src={`https:${item.fields.thumbnail.fields.file.url}`}
+                                    width={270}
+                                    height={170}
+                                    alt={item.fields.nameProduct}
+                                    className='w-full h-full'
+                                    loading='lazy' />
+                            </figure>
+                            <div className="card-body">
+                                <Link href={`/motorcycles/${item.fields.slug}`}>
+                                    <div className="card-title flex">
+                                        <h2 className="text-start font-cousine hover:text-third">{item.fields.nameProduct}</h2>
+                                        <h2 className="ms-auto badge badge-outline text-third font-cousine">{item.fields.tags}</h2>
+                                    </div>
+                                    <div className="mb-5 font-montserrat font-medium">
+                                        <p>{item.fields.shortDesc}</p>
+                                    </div>
+                                    <div className="card-actions justify-start mt-auto">
+                                        <BtnProduct />
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    })}
+                </div>
+            </article>
+            {/* Product */}
+            {/* <article className="featured-product w-full h-full py-10">
                 <div className="head flex content-center mx-3 md:mx-0 mb-2">
                     <h1 className='text-xl md:text-3xl text-center md:text-start font-cousine font-bold ms-0 md:ms-5'><span className='text-third'>Top-Rates</span> Motorcycles</h1>
                 </div>
@@ -503,7 +575,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </article>
+            </article> */}
             {/* Featured Product */}
 
             {/* Testimonials */}
@@ -515,7 +587,7 @@ export default function Home() {
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
                             <div className="profile mx-auto">
-                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">John Doe</h2>
                             </div>
                             <p className="text-justify mt-auto font-montserrat font-medium">"Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle."</p>
@@ -524,7 +596,7 @@ export default function Home() {
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
                             <div className="profile mx-auto">
-                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Jane Doe</h2>
                             </div>
                             <p className="text-justify mt-auto font-montserrat font-medium">"I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here."</p>
@@ -533,7 +605,7 @@ export default function Home() {
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
                         <div className="card-body">
                             <div className="profile mx-auto">
-                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
+                                <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Joko Doe</h2>
                             </div>
                             <p className="text-justify mt-auto font-montserrat font-medium">"My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous."</p>
