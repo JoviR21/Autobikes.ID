@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
+import { TypeProductCardSkeleton } from "@/src/contentful/types";
 
 import BtnProduct from "@/components/BtnProduct";
 
@@ -18,7 +19,7 @@ export default function Motorcycles() {
                     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
                     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
                 });
-                const response = await client.getEntries({
+                const response = await client.getEntries<TypeProductCardSkeleton>({
                     content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT || "",
                 });
 

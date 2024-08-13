@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
+import { TypeProductCardSkeleton } from "@/src/contentful/types";
 import Image from "next/image";
 
 async function getCollection(slug: string) {
@@ -9,7 +10,7 @@ async function getCollection(slug: string) {
             space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
             accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
         });
-        const response = await client.getEntries({
+        const response = await client.getEntries<TypeProductCardSkeleton>({
             content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT!,
             "fields.slug": slug,
         });
@@ -39,13 +40,13 @@ export default async function CollectionsSlug({
     params: { slug: string };
 }) {
     const collection = await getCollection(params.slug);
-    const featuredImage = collection?.featuredImage as ContentfulImage;
-    const desc = collection?.desc as Text;
-    const specEngine = collection?.specEngine as Text;
-    const specChassisAndSuspension = collection?.specChassisAndSuspension as Text;
-    const specDimensionAndWeight = collection?.specDimensionAndWeight as Text;
-    const specCapacity = collection?.specCapacity as Text;
-    const specElectrical = collection?.specElectrical as Text;
+    const featuredImage = collection?.featuredImage as object;
+    const desc = collection?.desc as string;
+    const specEngine = collection?.specEngine as string;string
+    const specChassisAndSuspension = collection?.specChassisAndSuspension as string;
+    const specDimensionAndWeight = collection?.specDimensionAndWeight as string;
+    const specCapacity = collection?.specCapacity as string;
+    const specElectrical = collection?.specElectrical as string;
 
     const option = {
         renderNode: {

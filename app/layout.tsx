@@ -10,6 +10,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Autobikes.ID - Find Your Dream Bikes | Homepages",
   description: "Dealer and Importir Motorcycles",
+  keywords: "Autobikes, Motorcycles, Sport, Naked, Touring, Adventure, Custom, Trails, Bikes",
+  authors: {
+    name: "Jovi Rachman"
+  },
+  openGraph: {
+    title: "Autobikes.ID",
+    type: "website",
+    images: "/og.jpg",
+    description: "Dealer and Importir Motorcycles"
+  }
 };
 
 export default function RootLayout({

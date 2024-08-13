@@ -10,7 +10,7 @@ export default function About() {
             <section className="carousel w-full h-72">
                 <div id="item1" className="carousel-item w-full relative">
                     <Image
-                        src="/Hero-About.png"
+                        src="/Hero-About.webp"
                         width={2880}
                         height={1100}
                         alt="Carousel-1"
@@ -50,7 +50,7 @@ export default function About() {
                     </div>
                     <div className="photo w-full h-full object-cover">
                         <Image
-                            src="/About-Desc.png"
+                            src="/About-Desc.webp"
                             width={450}
                             height={450}
                             alt="About Description"

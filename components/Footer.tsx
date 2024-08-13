@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
 
     return (
@@ -5,33 +7,33 @@ export default function Footer() {
             <div className="footer bg-base-200 text-base-content p-10">
                 <nav>
                     <h6 className="footer-title text-third">Motorcycles</h6>
-                    <a className="link link-hover">Adventure</a>
-                    <a className="link link-hover">Custom</a>
-                    <a className="link link-hover">Trails</a>
-                    <a className="link link-hover">Sport</a>
-                    <a className="link link-hover">Touring</a>
-                    <a className="link link-hover">Naked</a>
+                    <Link href="/motorcycles" className="link link-hover">Adventure</Link>
+                    <Link href="/motorcycles" className="link link-hover">Custom</Link>
+                    <Link href="/motorcycles" className="link link-hover">Trails</Link>
+                    <Link href="/motorcycles" className="link link-hover">Sport</Link>
+                    <Link href="/motorcycles" className="link link-hover">Touring</Link>
+                    <Link href="/motorcycles" className="link link-hover">Naked</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title text-third">Services</h6>
-                    <a className="link link-hover">Trusted</a>
-                    <a className="link link-hover">Complete paper</a>
-                    <a className="link link-hover">Partners</a>
-                    <a className="link link-hover">Customer services</a>
-                    <a className="link link-hover">Testimonials</a>
+                    <Link href="/services" className="link link-hover">Trusted</Link>
+                    <Link href="/services" className="link link-hover">Complete paper</Link>
+                    <Link href="/services" className="link link-hover">Partners</Link>
+                    <Link href="/services" className="link link-hover">Customer services</Link>
+                    <Link href="/services" className="link link-hover">Testimonials</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title text-third">About</h6>
-                    <a className="link link-hover">History</a>
-                    <a className="link link-hover">Company Culture</a>
-                    <a className="link link-hover">FAQ</a>
-                    <a className="link link-hover">Locations</a>
-                    <a className="link link-hover">Contact us</a>
+                    <Link href="/about" className="link link-hover">History</Link>
+                    <Link href="/about" className="link link-hover">Company Culture</Link>
+                    <Link href="/about" className="link link-hover">FAQ</Link>
+                    <Link href="/about" className="link link-hover">Locations</Link>
+                    <Link href="/about" className="link link-hover">Contact us</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title text-third">Other's</h6>
-                    <a className="link link-hover">Test ride</a>
-                    <a className="link link-hover">Articles</a>
+                    <Link href="/ride" className="link link-hover">Test ride</Link>
+                    <Link href="/articles" className="link link-hover">Articles</Link>
                 </nav>
                 <nav>
                     <h3 className="footer-title text-3xl max-w-64 text-left md:text-right md:ms-auto">find your <span className="text-third">dream motorcycle</span> here!</h3>

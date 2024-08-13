@@ -32,32 +32,32 @@ export default function Services() {
                     <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2 gap-5">
                         <div className="card w-80 lg:w-72 h-full shadow-lg hover:shadow-xl hover:translate-y-[-12px] hover:border-2 hover:border-third transition-all ease-in-out">
                             <div className="card-body">
-                                <h2 className="card-title font-cousine font-bold"><MdOutlineVerifiedUser /> Trusted Motorcycle Importer</h2>
+                                <h2 className="card-title font-cousine font-bold"><MdOutlineVerifiedUser size={70} /> Trusted Motorcycle Importer</h2>
                                 <p className="font-montserrat">With over 300 happy customers since 2012, we are the top choice for motorcycle imports.</p>
                             </div>
                         </div>
                         <div className="card w-80 lg:w-72 h-full shadow-lg hover:shadow-xl hover:translate-y-[-12px] hover:border-2 hover:border-third transition-all ease-in-out">
                             <div className="card-body">
-                                <h2 className="card-title font-cousine font-bold"><IoMdCheckmarkCircleOutline /> Complete Import Services</h2>
+                                <h2 className="card-title font-cousine font-bold"><IoMdCheckmarkCircleOutline size={70} /> Complete Import Services</h2>
                                 <p className="font-montserrat">We handle all paperwork and invoices for your CBU motorcycle import needs.</p>
                             </div>
                         </div>
                         <div className="card w-80 lg:w-72 h-full shadow-lg hover:shadow-xl hover:translate-y-[-12px] hover:border-2 hover:border-third transition-all ease-in-out">
                             <div className="card-body">
-                                <h2 className="card-title font-cousine font-bold"><FaHandshake /> Expert Motorcycle Care</h2>
+                                <h2 className="card-title font-cousine font-bold"><FaHandshake size={70} /> Expert Motorcycle Care</h2>
                                 <p className="font-montserrat">With over 65 specialized workshops, your motorcycle is in the hands of experts.</p>
                             </div>
                         </div>
                         <div className="card w-80 lg:w-72 h-full shadow-lg hover:shadow-xl hover:translate-y-[-12px] hover:border-2 hover:border-third transition-all ease-in-out">
                             <div className="card-body">
-                                <h2 className="card-title font-cousine font-bold"><Ri24HoursFill /> 24/7 Customer Support</h2>
+                                <h2 className="card-title font-cousine font-bold"><Ri24HoursFill size={70} /> 24/7 Customer Support</h2>
                                 <p className="font-montserrat">Our dedicated customer service team is available 24/7 to assist you with any questions or concerns.</p>
                             </div>
                         </div>
                     </div>
                     <div className="image px-8 md:ps-0">
                         <Image
-                            src="/MV-Agusta-F3.png"
+                            src="/MV-Agusta-F3.webp"
                             width={495}
                             height={400}
                             alt="Mv Agusta F3"

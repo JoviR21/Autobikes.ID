@@ -2,37 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
+import { TypeProductCardSkeleton } from "@/src/contentful/types";
 
-import { CiCircleChevRight } from "react-icons/ci";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaHandshake } from "react-icons/fa";
 import { Ri24HoursFill } from "react-icons/ri";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 import Link from "next/link";
-import styled from 'styled-components';
 import Image from 'next/image';
 
 import BtnProduct from "@/components/BtnProduct";
+import ButtonCtg from "@/components/ButtonCtg";
+import ButtonSlider from "@/components/ButtonSlider";
 
 export default function Home() {
-    // Carousel
-    const ButtonSlider = styled.button`
-    padding: 0px 18px;
-    border: 2px solid #fff;
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    `
-    // Category
-    const ButtonCtg = styled.button`
-        transition: all 0.3s;
-        &:hover {
-            transform: translateX(5px);
-            color: #F05454;
-        }
-    `
 
     const [collection, setCollection] = useState([])
 
@@ -43,7 +28,7 @@ export default function Home() {
                     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
                     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
                 });
-                const response = await client.getEntries({
+                const response = await client.getEntries<TypeProductCardSkeleton>({
                     content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_PRODUCT || "",
                 });
 
@@ -57,6 +42,8 @@ export default function Home() {
         getData()
     }, [])
 
+    console.log(collection)
+
     return (
         <main>
             {/* Carousel */}
@@ -64,11 +51,11 @@ export default function Home() {
                 <div className="carousel w-full h-full">
                     <div id="item1" className="carousel-item w-full relative">
                         <Image
-                            src="/Carousel-1.png"
+                            src="/Carousel-1.webp"
                             width={2880}
                             height={1100}
                             alt="Carousel-1"
-                            className="w-full"
+                            className="w-full h-full"
                             loading="lazy"
                         />
                         <div className="body-text text-center absolute top-0 bottom-0 right-0 left-0 m-auto flex flex-col justify-center items-center">
@@ -82,14 +69,12 @@ export default function Home() {
                                     Autobikes.ID
                                 </span>
                             </h2>
-                            <ButtonSlider className="sm:w-fit btn-xs sm:btn-sm md:btn-md btn btn-outline">
-                                See more
-                            </ButtonSlider>
+                            <ButtonSlider />
                         </div>
                     </div>
                     <div id="item2" className="carousel-item w-full relative">
                         <Image
-                            src="/Carousel-2.png"
+                            src="/Carousel-2.webp"
                             width={2880}
                             height={1100}
                             alt="Carousel-2"
@@ -107,14 +92,12 @@ export default function Home() {
                                     Autobikes.ID
                                 </span>
                             </h2>
-                            <ButtonSlider className="sm:w-fit btn-xs sm:btn-sm md:btn-md btn btn-outline">
-                                See more
-                            </ButtonSlider>
+                            <ButtonSlider />
                         </div>
                     </div>
                     <div id="item3" className="carousel-item w-full relative">
                         <Image
-                            src="/Carousel-3.png"
+                            src="/Carousel-3.webp"
                             width={2880}
                             height={1100}
                             alt="Carousel-3"
@@ -132,9 +115,7 @@ export default function Home() {
                                     Autobikes.ID
                                 </span>
                             </h2>
-                            <ButtonSlider className="sm:w-fit btn-xs sm:btn-sm md:btn-md btn btn-outline">
-                                See more
-                            </ButtonSlider>
+                            <ButtonSlider />
                         </div>
                     </div>
                 </div>
@@ -174,7 +155,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Adventure</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />
                                 </div>
                             </div>
                         </div>
@@ -192,7 +173,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Custom</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />
                                 </div>
                             </div>
                         </div>
@@ -210,7 +191,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Trails</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />
                                 </div>
                             </div>
                         </div>
@@ -228,7 +209,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Sport</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />  
                                 </div>
                             </div>
                         </div>
@@ -246,7 +227,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Touring</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />
                                 </div>
                             </div>
                         </div>
@@ -264,7 +245,7 @@ export default function Home() {
                             <div className="card-body mt-auto">
                                 <h2 className="card-title">Naked</h2>
                                 <div className="card-actions justify-start">
-                                    <ButtonCtg className="text-3xl"><CiCircleChevRight /></ButtonCtg>
+                                    <ButtonCtg />
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
+import { TypeArticleCardSkeleton } from "@/src/contentful/types";
 import Image from "next/image";
 
 async function getCollection(slug: string) {
@@ -9,7 +10,7 @@ async function getCollection(slug: string) {
             space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
             accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
         });
-        const response = await client.getEntries({
+        const response = await client.getEntries<TypeArticleCardSkeleton>({
             content_type: process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_TYPE_ARTICLE!,
             "fields.slug": slug,
         });
@@ -39,10 +40,10 @@ export default async function CollectionsSlug({
     params: { slug: string };
 }) {
     const collection = await getCollection(params.slug);
-    const imageSection = collection?.imageSection as ContentfulImage;
-    const shortDesc = collection?.shortDesc as text;
-    const nameProduct = collection?.nameProduct as title;
-    const paragraph = collection?.paragraph as text;
+    const imageSection = collection?.imageSection as object;
+    const shortDesc = collection?.shortDesc as string;
+    const nameProduct = collection?.nameProduct as string;
+    const paragraph = collection?.paragraph as string;
 
     const option = {
         renderNode: {
