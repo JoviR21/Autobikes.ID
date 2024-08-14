@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-export default function error() {
+export default function Error() {
     const router = useRouter();
     const [remainingTime, setRemainingTime] = useState(6);
 

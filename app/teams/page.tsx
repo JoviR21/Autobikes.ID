@@ -34,7 +34,7 @@ export default function OurTeams() {
       {/* Teams */}
       <section className="teams w-full h-full py-10 px-5 bg-secondary">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 place-items-center mx-auto gap-7">
-          {teamMembers.map((member) => (
+          {teamMembers.map((member: any) => (
             <div className="card w-full h-full lg:card-side bg-base-100 shadow-xl hover:translate-x-1 transition-all ease-in" key={member?.login?.uuid}>
               <figure>
                 <Image
