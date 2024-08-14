@@ -14,6 +14,7 @@ Autobikes.ID is a company profile website and motorcycle dealership/importer in 
 **Assets**
 * **Unsplash** and **Pexels:** For sourcing free stock images.
 
-**Link to project:** [Insert link to your deployed Autobikes.ID website here]
+**Link to project:** []
+**Figma Design:** []
 
 ##### (First Website using React Js, Next Js, Typescript, Tailwind & Headless CMS)
