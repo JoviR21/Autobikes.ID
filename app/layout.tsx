@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Autobikes.ID - Find Your Dream Bikes | Homepages",
   description: "Dealer and Importir Motorcycles",
   keywords: "Autobikes, Motorcycles, Sport, Naked, Touring, Adventure, Custom, Trails, Bikes",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   authors: {
     name: "Jovi Rachman"
   },
