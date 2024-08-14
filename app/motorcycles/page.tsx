@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import { createClient } from "contentful";
+import { useState, useEffect, ReactNode } from "react";
+import { createClient, Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeProductCardSkeleton } from "@/src/contentful/types";
@@ -10,7 +10,9 @@ import BtnProduct from "@/components/BtnProduct";
 
 export default function Motorcycles() {
 
-    const [collection, setCollection] = useState([])
+    const [collection, setCollection] = useState<
+        Entry<TypeProductCardSkeleton>[]
+    >([])
 
     useEffect(() => {
         async function getData() {
@@ -94,21 +96,23 @@ export default function Motorcycles() {
                         return <div className="card bg-base-100 w-72 sm:w-80 h-full shadow-xl" key={item.sys.id}>
                             <figure>
                                 <Image
-                                    src={`https:${item.fields.thumbnail.fields.file.url}`}
+                                    src={`https:${thumbnail.fields.file.url}`}
                                     width={270}
                                     height={170}
-                                    alt={item.fields.nameProduct}
+                                    alt={item.fields.nameProduct as string}
                                     className='w-full h-full'
                                     loading='lazy' />
                             </figure>
                             <div className="card-body">
-                                <Link href={`/motorcycles/${item.fields.slug}`}>
-                                    <div className="card-title flex">
-                                        <h2 className="text-start font-cousine hover:text-third">{item.fields.nameProduct}</h2>
-                                        <h2 className="ms-auto badge badge-outline text-third font-cousine">{item.fields.tags}</h2>
-                                    </div>
-                                    <div className="mb-5 font-montserrat font-medium">
-                                        <p>{item.fields.shortDesc}</p>
+                                <Link className="flex h-full flex-col" href={`/motorcycles/${item.fields.slug}`} >
+                                    <div>
+                                        <div className="card-title flex">
+                                            <h2 className="text-start font-cousine hover:text-third">{item.fields.nameProduct as ReactNode}</h2>
+                                            <h2 className="ms-auto badge badge-outline text-third font-cousine">{item.fields.tags as ReactNode}</h2>
+                                        </div>
+                                        <div className="mb-5 font-montserrat font-medium">
+                                            <p>{item.fields.shortDesc as ReactNode}</p>
+                                        </div>
                                     </div>
                                     <div className="card-actions justify-start mt-auto">
                                         <BtnProduct />

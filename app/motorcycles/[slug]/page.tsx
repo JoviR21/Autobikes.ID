@@ -40,13 +40,13 @@ export default async function CollectionsSlug({
     params: { slug: string };
 }) {
     const collection = await getCollection(params.slug);
-    const featuredImage = collection?.featuredImage as object;
+    const featuredImage = collection?.featuredImage as {fields: {file: {url: string}}};
     const desc = collection?.desc as string;
-    const specEngine = collection?.specEngine as string;string
-    const specChassisAndSuspension = collection?.specChassisAndSuspension as string;
-    const specDimensionAndWeight = collection?.specDimensionAndWeight as string;
-    const specCapacity = collection?.specCapacity as string;
-    const specElectrical = collection?.specElectrical as string;
+    const specEngine = collection?.specEngine;
+    const specChassisAndSuspension = collection?.specChassisAndSuspension;
+    const specDimensionAndWeight = collection?.specDimensionAndWeight;
+    const specCapacity = collection?.specCapacity;
+    const specElectrical = collection?.specElectrical;
 
     const option = {
         renderNode: {
@@ -92,7 +92,7 @@ export default async function CollectionsSlug({
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Engine</div>
                         <div className="collapse-content pt-3 font-montserrat">
                             <div className="list-disc">
-                                {documentToReactComponents(specEngine, option)}
+                                {documentToReactComponents(specEngine!, option)}
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export default async function CollectionsSlug({
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Chassis & Suspension</div>
                         <div className="collapse-content pt-3 font-montserrat">
                         <div className="list-disc">
-                                {documentToReactComponents(specChassisAndSuspension, option)}
+                                {documentToReactComponents(specChassisAndSuspension!, option)}
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default async function CollectionsSlug({
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Dimension & Weight</div>
                         <div className="collapse-content pt-3 font-montserrat">
                         <div className="list-disc">
-                                {documentToReactComponents(specDimensionAndWeight, option)}
+                                {documentToReactComponents(specDimensionAndWeight!, option)}
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@ export default async function CollectionsSlug({
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Capacity</div>
                         <div className="collapse-content pt-3 font-montserrat">
                             <div className="list-disc">
-                                {documentToReactComponents(specCapacity, option)}
+                                {documentToReactComponents(specCapacity!, option)}
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export default async function CollectionsSlug({
                         <div className="collapse-title text-xl font-cousine font-bold border-b-4 border-third rounded-none hover:border-white">Electrical</div>
                         <div className="collapse-content pt-3 font-montserrat">
                             <div className="list-disc">
-                                {documentToReactComponents(specElectrical, option)}
+                                {documentToReactComponents(specElectrical!, option)}
                             </div>
                         </div>
                     </div>

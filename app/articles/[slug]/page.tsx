@@ -40,10 +40,10 @@ export default async function CollectionsSlug({
     params: { slug: string };
 }) {
     const collection = await getCollection(params.slug);
-    const imageSection = collection?.imageSection as object;
-    const shortDesc = collection?.shortDesc as string;
-    const nameProduct = collection?.nameProduct as string;
-    const paragraph = collection?.paragraph as string;
+    const imageSection = collection?.imageSection as {fields: {file: {url: string}}};
+    const shortDesc = collection?.shortDesc;
+    const nameProduct = collection?.nameProduct;
+    const paragraph = collection?.paragraph;
 
     const option = {
         renderNode: {
@@ -88,7 +88,7 @@ export default async function CollectionsSlug({
             <div className="paragraph w-full h-full py-10 px-5 bg-secondary">
                 <div className="hero-content text-justify me-0 md:me-auto mx-auto">
                     <div className="font-cousine">
-                        <p className="text-base mb-8">{documentToReactComponents(paragraph, option)}</p>
+                        <div className="text-base mb-8">{documentToReactComponents(paragraph!, option)}</div>
                     </div>
                 </div>
             </div>

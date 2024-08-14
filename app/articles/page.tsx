@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import { createClient } from "contentful";
+import { ReactNode, useEffect, useState } from "react";
+import { createClient, Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link"
 import { TypeArticleCardSkeleton } from "@/src/contentful/types";
@@ -9,7 +9,10 @@ import { TypeArticleCardSkeleton } from "@/src/contentful/types";
 import BtnAtc from "@/components/BtnAtc";
 
 export default function Articles() {
-    const [collection, setCollection] = useState([])
+
+    const [collection, setCollection] = useState<
+    Entry<TypeArticleCardSkeleton>[]
+  >([])
 
     useEffect(() => {
         async function getData() {
@@ -66,16 +69,16 @@ export default function Articles() {
                         return <div className="card image-full w-72 md:w-96 shadow-xl" key={item.sys.id}>
                             <figure>
                                 <Image
-                                    src={`https:${item.fields.thumbnail.fields.file.url}`}
+                                    src={`https:${thumbnail.fields.file.url}`}
                                     width={360}
                                     height={280}
-                                    alt={item.fields.nameProduct}
+                                    alt={item.fields.nameProduct as string}
                                     className="w-full h-full"
                                     loading="lazy" />
                             </figure>
                             <div className="card-body mt-auto">
                                 <Link href={`/articles/${item.fields.slug}`}>
-                                    <p className="card-title font-cousine font-bold hover:text-third hover:translate-x-2 transition-all ease-in-out">{item.fields.nameProduct}</p>
+                                    <p className="card-title font-cousine font-bold hover:text-third hover:translate-x-2 transition-all ease-in-out">{item.fields.nameProduct as ReactNode}</p>
                                     <div className="card-actions justify-start">
                                         <BtnAtc />
                                     </div>
