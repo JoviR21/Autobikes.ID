@@ -1,5 +1,4 @@
 ## Autobikes.ID: A React Next.js Project for Purwadhika Bootcamp Code Challange
-### First Website using React Js, Next Js, Typescript, Tailwind & Headless CMS
 
 **Project Overview**
 
@@ -17,3 +16,4 @@ Autobikes.ID is a company profile website and motorcycle dealership/importer in 
 
 **Link to project:** [Insert link to your deployed Autobikes.ID website here]
 
+### (First Website using React Js, Next Js, Typescript, Tailwind & Headless CMS)
