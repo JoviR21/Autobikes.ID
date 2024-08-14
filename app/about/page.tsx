@@ -45,7 +45,7 @@ export default function About() {
                         <div className="border-b-2 my-4 lg:mb-20"></div>
                         <div className="head text-2xl font-cousine font-bold">Company Culture of <span className="text-third">Autobikes.ID</span>.</div>
                         <div className="full-desc text-base font-montserrat font-medium">
-                            <strong className="text-third">Autobikes.id's</strong> company culture is built on the foundation of teamwork, innovation, and dedication to our customers. We create a positive, inclusive, and fun work environment where every individual feels valued and has the opportunity to contribute.
+                            <strong className="text-third">Autobikes.id&apos;s</strong> company culture is built on the foundation of teamwork, innovation, and dedication to our customers. We create a positive, inclusive, and fun work environment where every individual feels valued and has the opportunity to contribute.
                         </div>
                     </div>
                     <div className="photo w-full h-full object-cover">
@@ -77,7 +77,7 @@ export default function About() {
                         <div className="collapse-title text-xl font-medium border-b-4 border-third rounded-none hover:border-white">What do CBU and CKD mean?</div>
                         <div className="collapse-content pt-3">
                             <ol className="list-decimal">
-                                <li>CBU: Completely Built Up (fully assembled motorcycle imported from the manufacturer's country).</li>
+                                <li>CBU: Completely Built Up (fully assembled motorcycle imported from the manufacturers country).</li>
                                 <li>CKD: Completely Knock Down (motorcycle parts imported and assembled locally).</li>
                             </ol>
                         </div>

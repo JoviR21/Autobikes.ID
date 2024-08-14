@@ -107,7 +107,7 @@ export default function Services() {
                     <div className="card bg-fourth w-80 h-full shadow-xl border-4 border-third">
                         <div className="card-body">
                             <h2 className="card-title text-3xl font-cousine font-semibold">Towing Motorcycles</h2>
-                            <h5 className="text-base font-montserrat font-medium">Don't panic when your motorcycle breaks down, we're here to help.</h5>
+                            <h5 className="text-base font-montserrat font-medium">Dont panic when your motorcycle breaks down, were here to help.</h5>
                             <div className="border-b-4 rounded border-third mb-4 mt-3"></div>
                             <ol className="list-service list-disc text-base font-montserrat font-medium ms-5 gap-5">
                                 <li>Vehicle Transportation</li>
@@ -134,7 +134,7 @@ export default function Services() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">John Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
@@ -143,7 +143,7 @@ export default function Services() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Jane Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
@@ -152,7 +152,7 @@ export default function Services() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto"/>
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Joko Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous.</p>
                         </div>
                     </div>
                 </div>

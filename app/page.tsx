@@ -573,7 +573,7 @@ export default function Home() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">John Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">Thank you, Autobikes.ID for the excellent service. I am very satisfied with my new motorcycle.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
@@ -582,7 +582,7 @@ export default function Home() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Jane Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">I am very lucky to choose Autobikes.ID as my motorcycle dealer. My motorcycle is always in prime condition after being serviced here.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 w-64 md:w-80 lg:w-96 h-full shadow-xl">
@@ -591,7 +591,7 @@ export default function Home() {
                                 <Image src="/Profile-Testi.png" width={65} height={65} alt="User" className="rounded-full mx-auto" />
                                 <h2 className="card-title font-overpass font-semibold capitalize text-center mt-2 hover:text-third cursor-pointer transition-all ease-linear">Joko Doe</h2>
                             </div>
-                            <p className="text-justify mt-auto font-montserrat font-medium">"My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous."</p>
+                            <p className="text-justify mt-auto font-montserrat font-medium">My motorcycle is as good as new after being serviced at Autobikes.ID. The technicians here are very professional and meticulous.</p>
                         </div>
                     </div>
                 </div>

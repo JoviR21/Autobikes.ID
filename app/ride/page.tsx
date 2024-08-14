@@ -10,7 +10,7 @@ export default function TestRide() {
                     <div className="max-w-lg font-cousine">
                         <h1 className="text-4xl md:text-5xl font-bold">Test Ride</h1>
                         <p className="text-2xl md:text-3xl py-2">
-                            <span className="text-third">Let us know</span> if you'd like to schedule a <span className="text-third">Test Ride</span>...
+                            <span className="text-third">Let us know</span> if you like to schedule a <span className="text-third">Test Ride</span>...
                         </p>
                     </div>
                 </div>
